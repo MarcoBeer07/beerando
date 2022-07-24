@@ -1,0 +1,20 @@
+.header {
+    background-color: #fb6100;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.header-logo {
+    position: absolute;
+    left: 20px;
+}
+
+.header-address {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
