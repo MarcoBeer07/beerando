@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasketComponent implements OnInit {
 
-  constructor() { }
+  basketCourts: any = [{
+    basketName: '',
+    basketDescription: '',
+    basketPrice: ''
+  }];
+
+
+
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {
+
   }
+
+
 
 }

@@ -1,6 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    width: 100vw;
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-box {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
 }

@@ -3,7 +3,18 @@
     <div class="basket-content">
         <div class="basket-headline-box">
             <h2>Warenkorb</h2>
-            <img class="close-basket display-none-normal-view">
+            <div *ngIf="basketCourts.length > 1" class="basket-empty text-center">
+                <img src="./assets/img/shopping-basket-2-48.png">
+                <h2>Fülle deinen Warenkorb</h2>
+                <p>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</p>
+            </div>
+            <img class="close-basket display-none-normal-view" src="./assets/img/delete-2-24.png">
+
+            <div class="basket-element-box" *ngFor="let basket of basketCourts">
+                <div>{{basket.basketName}}</div>
+                <div>{{basket.basketDescription}}</div>
+                <div>{{basket.basketPrice}}</div>
+            </div>
         </div>
     </div>
 </div>

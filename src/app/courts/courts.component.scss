@@ -1,6 +1,5 @@
 .court-box {
-    width: 70%;
-    height: 6000px;
+    width: 70vw;
 }
 
 .court-header-img {
@@ -9,5 +8,42 @@
         height: 250px;
         object-fit: cover;
         width: 100%;
+    }
+}
+
+.court-content-box {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.court-content {
+    position: relative;
+    border-style: solid;
+    border-color: rgb(212, 212, 212);
+    border-width: 1px;
+    padding: 16px;
+    margin-top: 10px;
+    h2 {
+        font-size: 22px;
+    }
+    h5 {
+        color: rgb(187, 187, 187);
+        font-size: 15px;
+    }
+    p {
+        font-weight: bold;
+        font-size: 18px;
+        color: #fb6100;
+    }
+}
+
+.add-btn {
+    background-color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    img {
+        width: 20px;
+        height: 20px;
     }
 }
