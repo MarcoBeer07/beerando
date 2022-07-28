@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CourtsComponent } from './courts/courts.component';
 import { BasketComponent } from './basket/basket.component';
+import { SenderService } from './sender.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { BasketComponent } from './basket/basket.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [SenderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

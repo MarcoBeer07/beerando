@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { SenderService } from '../sender.service';
 
 @Component({
   selector: 'app-basket',
@@ -7,21 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasketComponent implements OnInit {
 
-  basketCourts: any = [{
-    basketName: '',
-    basketDescription: '',
-    basketPrice: ''
-  }];
+  public courts: any = [];
+  public basketName: any = [];
+  public basketDescription: any = [];
+  public basketPrice: any = [];
 
 
-
-
-  constructor() {
-
-  }
+  constructor(private _senderService: SenderService) { }
 
   ngOnInit(): void {
-
+    this.courts = this._senderService.getCourts();
+    this.basketName = this._senderService.getBasketName();
+    this.basketDescription = this._senderService.getBasketDescription();
+    this.basketPrice = this._senderService.getBasketPrice();
   }
 
 

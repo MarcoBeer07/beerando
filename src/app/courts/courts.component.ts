@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { SenderService } from '../sender.service';
+
 
 @Component({
   selector: 'app-courts',
@@ -7,20 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourtsComponent implements OnInit {
 
-
-  courts: any = [
-    { name: 'Schokoladen Muffin', description: 'Muffin mit Schokoladenfüllung', price: 2.90 },
-    { name: 'Erdbeer Muffin', description: 'Muffin mit Erdbeerfüllung', price: 3.90 },
-    { name: 'Streusel Muffin', description: 'Muffin mit Bunten Streuseln', price: 3.20 },
-    { name: 'Schoko-Bananen Muffins', description: 'Muffin mit Bananen-Schokoladen Füllung', price: 4.60 }];
+  public courts: any = [];
+  public basketName: any = [];
+  public basketDescription: any = [];
+  public basketPrice: any = [];
 
 
-  constructor() { }
+  constructor(private _senderService: SenderService) { }
+
 
   ngOnInit(): void {
+    this.courts = this._senderService.getCourts();
+    this.basketName = this._senderService.getBasketName();
+    this.basketDescription = this._senderService.getBasketDescription();
+    this.basketPrice = this._senderService.getBasketPrice();
   }
 
   addCourtToBasket() {
+    this.basketName.push('affe')
+    console.log(this.basketName)
   }
 
 }
