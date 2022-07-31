@@ -6,12 +6,12 @@
 
     <div class="court-content-box">
 
-        <div *ngFor="let court of courts" class="court-content">
-            <h2>{{court.name}}</h2>
-            <h5>{{court.description}}</h5>
-            <p>{{court.price.toFixed(2)}} €</p>
+        <div *ngFor="let court of courts ; let i=index" class="court-content">
+            <h2>{{court["name"]}}</h2>
+            <h5>{{court["description"]}}</h5>
+            <p>{{court["price"]}} €</p>
             <div class="add-btn">
-                <button (click)="addCourtToBasket()"><img src="/assets/img/add-icon.svg" alt=""></button>
+                <button (click)="addCourtToBasket(i)"><img src="/assets/img/add-icon.svg" alt=""></button>
             </div>
         </div>
     </div>

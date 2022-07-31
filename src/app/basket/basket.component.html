@@ -2,18 +2,19 @@
 
     <div class="basket-content">
         <div class="basket-headline-box">
-            <h2>Warenkorb</h2>
-            <div class="basket-empty text-center">
+            <div class="basket-headline">
+                <h2>Warenkorb</h2>
+            </div>
+            <div class="empty-basket" *ngIf="data.basketName.length <=0">
                 <img src="./assets/img/shopping-basket-2-48.png">
                 <h2>Fülle deinen Warenkorb</h2>
                 <p>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</p>
             </div>
-            <img class="close-basket display-none-normal-view" src="./assets/img/delete-2-24.png">
 
-            <div class="basket-element-box">
-                <div *ngFor="let basket of basketName">{{basket.basketName}}</div>
-                <div *ngFor="let basket2 of basketDescription">{{basket2.basketDescription}}</div>
-                <div *ngFor="let basket3 of basketPrice">{{basket3.basketPrice}}</div>
+            <div class="basket-element-box" *ngFor="let basket of data.basketName ;let i=index">
+                <div>{{data.basketName[i]}}</div>
+                <div>{{data.basketDescription[i]}}</div>
+                <div>{{data.basketPrice[i]}}</div>
             </div>
         </div>
     </div>

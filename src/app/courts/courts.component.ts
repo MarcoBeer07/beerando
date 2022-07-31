@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { VirtualTimeScheduler } from 'rxjs';
 import { SenderService } from '../sender.service';
 
 
@@ -10,24 +12,28 @@ import { SenderService } from '../sender.service';
 export class CourtsComponent implements OnInit {
 
   public courts: any = [];
-  public basketName: any = [];
-  public basketDescription: any = [];
-  public basketPrice: any = [];
+
+  constructor(private _senderService: SenderService, private router: Router, private route: ActivatedRoute) {
+
+  }
 
 
-  constructor(private _senderService: SenderService) { }
 
 
   ngOnInit(): void {
     this.courts = this._senderService.getCourts();
-    this.basketName = this._senderService.getBasketName();
-    this.basketDescription = this._senderService.getBasketDescription();
-    this.basketPrice = this._senderService.getBasketPrice();
+
   }
 
-  addCourtToBasket() {
-    this.basketName.push('affe')
-    console.log(this.basketName)
+  addCourtToBasket(i: any) {
+    this._senderService.basketName.push(this.courts[i]['name']);
+    this._senderService.basketDescription.push(this.courts[i]['description']);
+    this._senderService.basketPrice.push(this.courts[i]['price']);
+  }
+
+
+  reloadCurrentRoute() {
+    this.router.navigate([this.router.url])
   }
 
 }

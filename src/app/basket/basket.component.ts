@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SenderService } from '../sender.service';
 
 @Component({
@@ -8,20 +9,22 @@ import { SenderService } from '../sender.service';
 })
 export class BasketComponent implements OnInit {
 
-  public courts: any = [];
-  public basketName: any = [];
-  public basketDescription: any = [];
-  public basketPrice: any = [];
+
+  sendData: boolean = false;
+
+  constructor(private _senderService: SenderService, private router: Router, private route: ActivatedRoute) {
+
+  }
+
+  data: any = this._senderService;
 
 
-  constructor(private _senderService: SenderService) { }
 
   ngOnInit(): void {
-    this.courts = this._senderService.getCourts();
-    this.basketName = this._senderService.getBasketName();
-    this.basketDescription = this._senderService.getBasketDescription();
-    this.basketPrice = this._senderService.getBasketPrice();
+
   }
+
+
 
 
 

@@ -5,13 +5,22 @@ html {
 }
 
 body {
-    width: 100vw;
-    margin: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: auto;
+    font-family: 'Raleway', sans-serif;
 }
 
 .main-box {
-    overflow: hidden;
     width: 100%;
     display: flex;
+}
+
+.basket-main-box {
+    width: 30%;
+    min-width: 400px;
+}
+
+.court-main-box {
+    width: 70%;
 }
